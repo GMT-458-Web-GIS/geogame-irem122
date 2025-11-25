@@ -1,0 +1,587 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   ARKA PLAN (ANİMASYONLU HAZİNE TEMASI)
+========================================================= */
+/* =============================
+   GLOBAL AURORA BACKGROUND
+============================= */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(120deg, #6a11cb, #2575fc, #ff5f6d, #ffc371);
+  background-size: 400% 400%;
+  animation: auroraMove 12s ease-in-out infinite;
+}
+
+@keyframes auroraMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =============================
+   LIGHT WAVES
+============================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% -10%, #ffffff44, transparent 70%),
+              radial-gradient(circle at 80% 120%, #ffffff33, transparent 70%);
+  mix-blend-mode: screen;
+  animation: lightWaves 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes lightWaves {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-40px) scale(1.2); opacity: 0.9; }
+}
+
+/* =============================
+   FLOATING PARTICLES
+============================= */
+.particles {
+  position: fixed;
+  pointer-events: none;
+  inset: 0;
+  background-image: url("https://i.imgur.com/w1X8vYV.png");
+  opacity: 0.3;
+  animation: particlesFloat 25s linear infinite;
+  z-index: 1;
+}
+
+@keyframes particlesFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-1000px); }
+}
+
+/* =============================
+   DARK MODE
+============================= */
+body.dark {
+  background: linear-gradient(120deg, #0d1b2a, #1b263b, #415a77, #778da9);
+  background-size: 400% 400%;
+  animation: auroraMove 16s ease infinite;
+}
+
+body.dark::before {
+  background: radial-gradient(circle at 20% -10%, #ffffff22, transparent 70%),
+              radial-gradient(circle at 80% 120%, #ffffff11, transparent 70%);
+}
+
+body.dark .particles {
+  opacity: 0.15;
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+body.dark {
+  background: #0d1b2a !important;
+  color: white !important;
+}
+
+body.dark .glass,
+body.dark #heroPanel,
+body.dark #hintBox,
+body.dark canvas {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* DARK TOGGLE */
+#darkToggle {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  z-index: 99999;
+  cursor: pointer;
+  width: 55px;
+  height: 28px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: 0.25s;
+}
+#darkToggle span {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+body.dark #darkToggle {
+  background: rgba(255,255,255,0.4);
+}
+body.dark #darkToggle span {
+  transform: translateX(26px);
+}
+
+/* =========================================================
+   EKRANLAR
+========================================================= */
+.screen {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+}
+.screen.active {
+  display: block;
+}
+
+/* =========================================================
+   GLASS EFFECT
+========================================================= */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 25px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  transition: 0.25s ease;
+}
+.glass:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-4px);
+}
+
+/* =========================================================
+   BAŞLIK
+========================================================= */
+.title {
+  font-size: 68px;
+  font-weight: 900;
+  color: #ffe9b0;
+  text-shadow:
+    0 0 10px rgba(255, 180, 60, 0.6),
+    0 0 20px rgba(255, 150, 40, 0.4),
+    0 4px 0 #5a3000;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: #ffe9b0;
+  text-shadow:
+    0 0 10px rgba(255, 180, 60, 0.6),
+    0 0 20px rgba(255, 150, 40, 0.4),
+    0 3px 0 #5a3000;
+  letter-spacing: 2px;
+}
+#screen-rules p {
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   BUTONLAR
+========================================================= */
+.btn {
+  padding: 12px 28px;
+  margin-top: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+  transition: 0.25s;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.28);
+}
+.btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* =========================================================
+   HERO SEÇİMİ
+========================================================= */
+.hero-box {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+.hero {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: 0.25s;
+}
+.hero:hover {
+  transform: scale(1.08);
+}
+.hero.selected {
+  border-color: #fff;
+  transform: scale(1.12);
+}
+
+/* =========================================================
+   KATEGORİ SEÇİMİ
+========================================================= */
+.cat-box {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 40px;
+}
+.cat-card {
+  width: 180px;
+  padding: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  transition: 0.25s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.cat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.28);
+}
+.cat-card.selected {
+  border: 2px solid white;
+  background: rgba(255,255,255,0.35);
+}
+.cat-card img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   SAYIM DAİRESİ
+========================================================= */
+#countdownCircle {
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 6px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+}
+#countdownNumber {
+  font-size: 80px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   OYUN EKRANI
+========================================================= */
+#topBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+#scoreBox, #timerBox {
+  font-size: 22px;
+  padding: 10px 22px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+#hintBox {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 15px;
+  height: 180px;  
+  width: 320px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.13);
+  backdrop-filter: blur(10px);
+}
+#hintText {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   HARİTA
+========================================================= */
+#map {
+  width: 100%;
+  height: calc(100% - 140px);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+  box-shadow: 0 8px 35px rgba(0,0,0,0.3);
+}
+
+/* =========================================================
+   SOL HERO PANEL
+========================================================= */
+/* ===================== DARK MODE ===================== */
+/* ==== DARK MODE BUTONU ==== */
+.theme-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 26px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.6);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  z-index: 99999;
+}
+
+body.dark .theme-btn {
+  background: rgba(0,0,0,0.6);
+}
+
+/* ==== DARK MODE ARKA PLAN ==== */
+body.dark {
+  background: #0a0f1d !important;
+}
+
+/* DARK MODE → yazılar */
+body.dark * {
+  color: #e7e7e7 !important;
+}
+
+/* DARK MODE → panel */
+body.dark #heroPanel {
+  background: #111a2e;
+  border-color: #22325c;
+}
+
+/* DARK MODE → hint kutusu */
+body.dark #hintBox {
+  background: rgba(255,255,255,0.05);
+}
+
+/* DARK MODE → top bar */
+body.dark #scoreBox,
+body.dark #timerBox {
+  background: rgba(255,255,255,0.06);
+}
+
+/* DARK MODE → bitiş ekranı */
+body.dark #screen-end canvas {
+  background: rgba(255,255,255,0.07);
+}
+
+/* ===================== THEME TOGGLE BUTTON ===================== */
+#themeToggle {
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  font-size: 22px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.3);
+  z-index: 999999;
+  transition: 0.25s;
+}
+
+#themeToggle:hover {
+  transform: scale(1.08);
+}
+
+/* ===================== HERO PANEL YENİ ===================== */
+/* ===================== SOL PANEL ===================== */
+#heroPanel {
+  position: absolute;
+  left: 25px;
+  top: 110px;
+  width: 260px;
+  padding: 20px 18px;
+
+  background: #ffffff;        /* Saydam değil → BEYAZ */
+  border-radius: 18px;
+  border: 2px solid #ececec;
+
+  color: #222;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 9999;
+
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+#heroPanel p {
+  margin: 6px 0;
+}
+
+#heroImage {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 8px;
+  object-fit: cover;
+}
+
+.panel-section {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.heart {
+  font-size: 26px;
+}
+
+/* DARK MODE → Panel siyah oluyor */
+body.dark #heroPanel {
+  background: #0e1628;
+  border-color: #1f2a45;
+  color: #d7d7d7;
+}
+
+
+/* =========================================================
+   DOĞRU CEVAP POPUP
+========================================================= */
+.correctPopup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px 32px;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  z-index: 999999;
+  border-radius: 18px;
+  text-align: center;
+  animation: fadePop 0.3s ease;
+}
+@keyframes fadePop {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+/* =============================
+   GOLD TREASURE ANIMATION (INTRO)
+============================= */
+.treasure-box {
+  width: 130px;
+  height: 130px;
+
+  background-image: url("icons/treasure-box.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation: chestFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 35px rgba(255, 200, 80, 0.7));
+}
+
+
+@keyframes chestFloat {
+  0%   { transform: translate(-50%, -50%) translateY(0); }
+  50%  { transform: translate(-50%, -50%) translateY(-14px); }
+  100% { transform: translate(-50%, -50%) translateY(0); }
+}
+
+
+
+
+
+/* Parlayan altın ışığı */
+.treasure-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,230,150,0.65), transparent 75%);
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: glowPulse 4s ease-in-out infinite;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%   { opacity: 0.45; transform: translate(-50%, -50%) scale(1); }
+  50%  { opacity: 0.9;  transform: translate(-50%, -50%) scale(1.35); }
+  100% { opacity: 0.45; transform: translate(-50%, -50%) scale(1); }
+}
+
+
+
+.correctTreasure {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+
+  background-image: url("icons/treasure-box.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+  animation: treasurePop 1.3s ease-out forwards;
+  filter: drop-shadow(0 0 12px rgba(255,215,0,0.85));
+
+  z-index: 999999;
+}
+
+
+
+@keyframes treasurePop {
+  0% { transform: scale(0); opacity: 0; }
+  40% { transform: scale(1.2); opacity: 1; }
+  70% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.6); opacity: 0; }
+}

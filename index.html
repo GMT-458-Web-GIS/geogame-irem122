@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>GeoTreasure Game</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<!-- DARK MODE BUTTON (TEK ADET!) -->
+<button id="themeToggle" class="theme-btn">🌙</button>
+
+<!-- 1) GİRİŞ EKRANI -->
+<div id="screen-start" class="screen active">
+    <h1 class="title">GeoTREASURE Game</h1>
+
+    <!-- HAZİNE ANİMASYONU BURAYA GELECEK -->
+    <div class="treasure-glow"></div>
+    <div class="treasure-box"></div>
+
+    <button class="btn" onclick="goToRules()">Start</button>
+</div>
+
+<!-- 2) KURALLAR -->
+<div id="screen-rules" class="screen">
+  <h2>Game Rules</h2>
+  <p>
+      Find as many treasures as possible in 60 seconds to increase your score.<br>
+      • You'll receive a clue based on the category you choose.<br>
+      • Answer by clicking on the country on the map.<br>
+     • First Correct → 20 points.
+     • 2nd correct 15 points,
+      •3rd correct 10 points<br>
+  </p>
+  <button class="btn" onclick="goToHero()">Continue</button>
+</div>
+
+<!-- 3) HERO SEÇİMİ -->
+<div id="screen-hero" class="screen">
+  <h2>Choose a Hero</h2>
+
+  <div class="hero-box">
+    <img src="img/0025c64c433aa23a941afe95b5b75810.jpg" onclick="selectHero('Blossom')" class="hero">
+    <img src="img/c61c8767dc2812018f60d6040d5f90ff.jpg" onclick="selectHero('Winx')" class="hero">
+    <img src="img/GarfieldCharacter-193x300.webp" onclick="selectHero('Garfield')" class="hero">
+    <img src="img/Johnnyb001.webp" onclick="selectHero('Johnny')" class="hero">
+  </div>
+
+  <button id="btnHeroNext" class="btn disabled" onclick="goToCategory()">Continue</button>
+</div>
+
+<!-- 4) KATEGORİ SEÇİMİ -->
+<div id="screen-category" class="screen">
+  <h2>Select Category</h2>
+
+  <div class="cat-box">
+    <div class="cat-card" onclick="selectCategory('capital')">
+      <img src="icons/cityscape.svg">
+      <p>Capital City</p>
+    </div>
+
+    <div class="cat-card" onclick="selectCategory('food')">
+      <img src="icons/fork-and-knife-with-plate.svg">
+      <p>Traditional Dishes</p>
+    </div>
+
+    <div class="cat-card" onclick="selectCategory('football')">
+      <img src="icons/football.svg">
+      <p>Football Logos</p>
+    </div>
+  </div>
+
+  <button id="btnCatNext" class="btn disabled" onclick="startGame()">Start The Game</button>
+</div>
+
+<!-- 4.5 GERİ SAYIM -->
+<div id="screen-countdown" class="screen">
+  <h2>Are You Ready?</h2>
+  <div id="countdownCircle">
+    <span id="countdownNumber">3</span>
+  </div>
+</div>
+
+<!-- 5) OYUN EKRANI -->
+<div id="screen-game" class="screen">
+  <div id="topBar">
+    <div id="scoreBox">Score: 0</div>
+    <div id="timerBox">Time: 60</div>
+  </div>
+
+  <div id="hintBox">
+    <img id="hintImage" style="display:none; height:120px; border-radius:10px;">
+    <div id="hintText"></div>
+  </div>
+
+  <!-- SOL HERO PANEL -->
+  <div id="heroPanel">
+    <img id="heroImage" src="">
+    <p id="heroName">Hero: -</p>
+    <p id="heroCategory">Category: -</p>
+
+    <div class="panel-section">
+      <p>True: <span id="correctCount">0</span></p>
+      <p>Wrong: <span id="wrongCount">0</span></p>
+    </div>
+
+    <div class="panel-section">
+      <p>Life:</p>
+      <div id="lives"></div>
+    </div>
+
+    <div class="panel-section">
+      <p>Remaining Time: <span id="timeLeftPanel">60</span></p>
+    </div>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<!-- 6) BİTİŞ EKRANI -->
+<!-- 6) BİTİŞ EKRANI -->
+<div id="screen-end" class="screen">
+  <h2>Time is Up</h2>
+
+  <p id="finalScore"></p>
+
+  <h3>True: <span id="finalCorrect"></span></h3>
+  <ul id="correctList"></ul>
+
+  <h3>Wrong: <span id="finalWrong"></span></h3>
+  <ul id="wrongList"></ul>
+
+  <canvas id="scoreChart" width="320" height="200"></canvas>
+
+  <button class="btn" onclick="location.reload()">Play Again</button>
+</div>
+
+
+<!-- SESLER -->
+<audio id="snd-win" src="sounds/winner-game-sound-404167.mp3"></audio>
+<audio id="snd-wrong2" src="sounds/negative_beeps-6008.mp3"></audio>
+<audio id="snd-intro" src="sounds/cool-hip-hop-loop-275527.mp3" loop></audio>
+<audio id="snd-fail" src="sounds/failure-2-89169.mp3"></audio>
+<audio id="snd-robotic" src="sounds/robotic-countdown-43935.mp3"></audio>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
