@@ -314,7 +314,7 @@ const footballCountries = [
   { country: "United Kingdom",   team: { name: "Chelsea",               img: "futbol/chelsea.png" },               lat: 51.48,  lon: -0.19 },
   { country: "Belgium",   team: { name: "Club Brugge",           img: "futbol/club brugge.png" },           lat: 51.209, lon: 3.224 },
   { country: "Denmark",   team: { name: "FC Copenhagen",         img: "futbol/copenhagen.png" },            lat: 55.673, lon: 12.568 },
-  { country: "Turkey",    team: { name: "Fenerbahçe",            img: "futbol/fenerbahce.png" },            lat: 40.98,  lon: 29.03 },
+  
   { country: "Poland",    team: { name: "Górnik Zabrze",         img: "futbol/gornik zabrze.png" },         lat: 50.30,  lon: 18.78 },
   { country: "Finland",   team: { name: "HJK Helsinki",          img: "futbol/helsinki.png" },              lat: 60.17,  lon: 24.94 },
   { country: "Italy",     team: { name: "Juventus",              img: "futbol/juventus.png" },              lat: 45.11,  lon: 7.64 },
