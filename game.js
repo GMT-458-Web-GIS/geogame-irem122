@@ -112,7 +112,7 @@ const capitalCountries = [
   { country: "India", capital: "New Delhi", lat: 28.61, lon: 77.20 },
   { country: "Australia", capital: "Canberra", lat: -35.28, lon: 149.13 },
   { country: "Canada", capital: "Ottawa", lat: 45.42, lon: -75.69 },
-  { country: "United States", capital: "Washington D.C.", lat: 38.89, lon: -77.03 },
+  { country: "United States of America", capital: "Washington D.C.", lat: 38.89, lon: -77.03 },
   { country: "Mexico", capital: "Mexico City", lat: 19.43, lon: -99.13 },
   { country: "Brazil", capital: "Brasilia", lat: -15.79, lon: -47.88 },
   { country: "Argentina", capital: "Buenos Aires", lat: -34.60, lon: -58.38 }
@@ -305,13 +305,13 @@ const foodCountries = [
 
 // ---------- 3) FUTBOL LİSTESİ ----------
 const footballCountries = [
-  { country: "England",   team: { name: "Aston Villa",           img: "futbol/aston villa.png" },           lat: 52.509, lon: -1.884 },
+  { country: "United Kingdom",   team: { name: "Aston Villa",           img: "futbol/aston villa.png" },           lat: 52.509, lon: -1.884 },
   { country: "Spain",     team: { name: "Atletico Madrid",       img: "futbol/atletico madrid.png" },       lat: 40.41,  lon: -3.70 },
   { country: "Switzerland", team:{ name: "FC Basel",             img: "futbol/basel.png" },                 lat: 47.559, lon: 7.588 },
   { country: "Germany",   team: { name: "Bayer Leverkusen",      img: "futbol/bayer leverkusen.png" },      lat: 51.034, lon: 6.984 },
   { country: "Portugal",  team: { name: "Benfica",               img: "futbol/benfica.png" },               lat: 38.752, lon: -9.184 },
   { country: "Germany",   team: { name: "Borussia Dortmund",     img: "futbol/Borussia Dortmund.png" },     lat: 51.492, lon: 7.451 },
-  { country: "England",   team: { name: "Chelsea",               img: "futbol/chelsea.png" },               lat: 51.48,  lon: -0.19 },
+  { country: "United Kingdom",   team: { name: "Chelsea",               img: "futbol/chelsea.png" },               lat: 51.48,  lon: -0.19 },
   { country: "Belgium",   team: { name: "Club Brugge",           img: "futbol/club brugge.png" },           lat: 51.209, lon: 3.224 },
   { country: "Denmark",   team: { name: "FC Copenhagen",         img: "futbol/copenhagen.png" },            lat: 55.673, lon: 12.568 },
   { country: "Turkey",    team: { name: "Fenerbahçe",            img: "futbol/fenerbahçe.png" },            lat: 40.98,  lon: 29.03 },
@@ -320,7 +320,7 @@ const footballCountries = [
   { country: "Italy",     team: { name: "Juventus",              img: "futbol/juventus.png" },              lat: 45.11,  lon: 7.64 },
   { country: "Japan",     team: { name: "Kashima Antlers",       img: "futbol/kashima.png" },               lat: 35.97,  lon: 140.64 },
   { country: "Finland",   team: { name: "KuPS",                  img: "futbol/kups.png" },                  lat: 62.89,  lon: 27.68 },
-  { country: "USA",       team: { name: "Inter Miami",           img: "futbol/miami.png" },                 lat: 25.76,  lon: -80.19 },
+  { country: "United States of America",       team: { name: "Inter Miami",           img: "futbol/miami.png" },                 lat: 25.76,  lon: -80.19 },
   { country: "Italy",     team: { name: "AC Milan",              img: "futbol/milan.png" },                 lat: 45.48,  lon: 9.12 },
   { country: "India",     team: { name: "Mohun Bagan",           img: "futbol/mohun bagan.png" },           lat: 22.57,  lon: 88.36 },
   { country: "Greece",    team: { name: "Olympiakos",            img: "futbol/olympiakos.png" },            lat: 37.95,  lon: 23.66 },
@@ -333,7 +333,7 @@ const footballCountries = [
   { country: "China",     team: { name: "Shanghai Port",         img: "futbol/shanghai.png" },              lat: 31.23,  lon: 121.47 },
   { country: "Czechia",   team: { name: "Slavia Prague",         img: "futbol/slavia.png" },                lat: 50.10,  lon: 14.45 },
   { country: "Sweden",    team: { name: "Stockholm Team",        img: "futbol/stockholm.png" },             lat: 59.33,  lon: 18.06 },
-  { country: "England",   team: { name: "Tottenham Hotspur",     img: "futbol/tottenham.png" },             lat: 51.60,  lon: -0.07 },
+  { country: "United Kingdom",   team: { name: "Tottenham Hotspur",     img: "futbol/tottenham.png" },             lat: 51.60,  lon: -0.07 },
   { country: "Spain",     team: { name: "Valencia CF",           img: "futbol/valencia.png.gif" },          lat: 39.47,  lon: -0.38 },
   { country: "Russia",    team: { name: "Zenit St. Petersburg",  img: "futbol/zenit saint-petersburg.png" },lat: 59.93,  lon: 30.31 }
 ];
