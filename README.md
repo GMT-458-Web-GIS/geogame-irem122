@@ -4,6 +4,9 @@
 # GEOTREASURE – WEB GIS TREASURE FINDING GAME
 
 Link: (https://gmt-458-web-gis.github.io/geogame-irem122/)
+
+
+
 GeoTreasure is an interactive Web GIS-based game where users try to find hidden treasure using clues on a world map. The game is fun, fast-paced, and entirely based on user interaction. The goal is to find as many treasures as possible before the time runs out and achieve a high score.
 
 
