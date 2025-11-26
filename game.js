@@ -331,7 +331,7 @@ const footballCountries = [
   { country: "Austria",   team: { name: "RB Salzburg",           img: "futbol/salzburg.png" },              lat: 47.80,  lon: 13.04 },
   { country: "South Korea", team:{ name: "FC Seoul",             img: "futbol/seoul.png" },                 lat: 37.56,  lon: 126.97 },
   { country: "China",     team: { name: "Shanghai Port",         img: "futbol/shanghai.png" },              lat: 31.23,  lon: 121.47 },
-  { country: "Czechia",   team: { name: "Slavia Prague",         img: "futbol/slavia.png" },                lat: 50.10,  lon: 14.45 },
+  
   { country: "Sweden",    team: { name: "Stockholm Team",        img: "futbol/stockholm.png" },             lat: 59.33,  lon: 18.06 },
   { country: "United Kingdom",   team: { name: "Tottenham Hotspur",     img: "futbol/tottenham.png" },             lat: 51.60,  lon: -0.07 },
   { country: "Spain",     team: { name: "Valencia CF",           img: "futbol/valencia.png.gif" },          lat: 39.47,  lon: -0.38 },
